@@ -1,7 +1,7 @@
 import csv
 import math
 import threading
-
+import time
 
 # 动态实现多线程处理csv文件
 # 需求，将csv文件中字段zjid末尾是字母和数字分别拆分到2个csv文件中
@@ -31,6 +31,7 @@ def numss():
 
 
 if __name__ == '__main__':
+    start = time.perf_counter()
     lock = threading.Lock()
     thread_list = []
     # 定义线程数量
@@ -51,5 +52,6 @@ if __name__ == '__main__':
     for thread in thread_list:
         thread.join()
 
-    print("执行结束")
+    finish = time.perf_counter()
+    print(f'线程运行时间长：{round(finish - start, 2)}')
 
