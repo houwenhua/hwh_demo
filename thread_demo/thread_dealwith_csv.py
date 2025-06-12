@@ -53,5 +53,6 @@ if __name__ == '__main__':
         thread.join()
 
     finish = time.perf_counter()
+    print("hello world")
     print(f'线程运行时间长：{round(finish - start, 2)}')
 
